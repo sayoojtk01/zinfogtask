@@ -11,7 +11,7 @@ class saleorder(models.Model):
         for order in self:
             delivery_charge = sum(line.price_subtotal for line in order.order_line) * 0.10
             order.delivery_charge = delivery_charge
-            order.amount_total = order.amount_untaxed + delivery_charge + order.amount_tax
+            # order.amount_total = order.amount_untaxed + delivery_charge + order.amount_tax
 
 
 
@@ -43,7 +43,7 @@ class invoiceorder(models.Model):
         for invoice in self:
             delivery_charge = sum(line.price_subtotal for line in invoice.invoice_line_ids) * 0.10
             invoice.delivery_charge = delivery_charge
-            invoice.amount_total = invoice.amount_untaxed + delivery_charge + invoice.amount_tax
+            # invoice.amount_total = invoice.amount_untaxed + delivery_charge + invoice.amount_tax
 
 
 
